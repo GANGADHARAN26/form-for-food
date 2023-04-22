@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Form</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script>
+    function displayFormData() {
+      var firstName = document.getElementById("first-name").value;
+      var lastName = document.getElementById("last-name").value;
+      var address = document.getElementById("address").value;
+      var pincode = document.getElementById("pincode").value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      var foodChoice = document.getElementById("food-choice").value;
+      
+      var table = document.getElementById("output-table");
+      var row = table.insertRow();
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      var cell6 = row.insertCell(5);
+      cell1.innerHTML = firstName;
+      cell2.innerHTML = lastName;
+      cell3.innerHTML = address;
+      cell4.innerHTML = pincode;
+      cell5.innerHTML = gender;
+      cell6.innerHTML = foodChoice;
+      
+      document.getElementById("my-form").reset();
+    }
+  </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <form id="my-form" >
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" class="form-control"><br>
+      
+          <label for="last-name">Last Name:</label>
+
+          <input type="text" id="last-name" name="last-name" class="form-control"><br>
+      
+          <label for="address">Address:</label>
+
+          <input id="address" name="address" class="form-control " ><br>
+      
+          <label for="pincode">Pincode:</label>
+
+          <input type="text" id="pincode" name="pincode" class="form-control"><br>
+      
+          <label for="gender">Gender:</label>
+
+          <input type="radio" id="male" name="gender" value="Male">
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="Female">
+          <label for="female">Female</label>
+<br>
+      
+          <label for="food-choice">Choice of Food:</label>
+          <br>
+          <select id="food-choice" name="food-choice" class="form-select">
+            <option value="Pizza">Pizza</option>
+            <option value="Burger">Burger</option>
+            <option value="Taco">Taco</option>
+        </select>
+        <br>
+      
+          <input type="button"  class="btn mt-5 btn-outline-info"  value="Submit" onclick="displayFormData()">
+        </form>
+      
+        <h2></h2>
+        <table id="output-table" class="table-hover m-5" border="1">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address </th>
+
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Choice of food</th>
+                </tr>
+            </thead>
+         
+        </table>
+</div>
+  
+</body>
+</html>
